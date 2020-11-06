@@ -33,7 +33,7 @@ axios.get('https://api.github.com/users/ngwatso')
     user, and adding that card to the DOM.
 */
 
-const followersArray = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell', 'scottmm374', 'mikeyjwilliams'];
+const followersArray = ['scottmm374', 'mikeyjwilliams', 'tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell'];
 
 followersArray.forEach(user => {
   axios.get(`https://api.github.com/users/${user}`)
@@ -68,6 +68,7 @@ function githubCard(obj) {
 
   const img = document.createElement('img');
     img.src = obj.data.avatar_url;
+    img.style.borderRadius = '50%';
 
   const cardInfo = document.createElement('div');
     cardInfo.classList.add('card-info');
